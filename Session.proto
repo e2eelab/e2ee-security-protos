@@ -1,22 +1,22 @@
 syntax = "proto3";
 
-package skissm;
+package e2ees;
 
-option java_package = "org.e2eelab.proto.skissm";
+option java_package = "org.e2eelab.proto.e2ees";
 option java_outer_classname = "SessionProto";
 option objc_class_prefix = "Objc";
 option swift_prefix="Swift";
 
-import "skissm/E2eeAddress.proto";
-import "skissm/KeyPair.proto";
-import "skissm/Ratchet.proto";
+import "e2ees/E2eeAddress.proto";
+import "e2ees/KeyPair.proto";
+import "e2ees/Ratchet.proto";
 
 /**
  * The Session.
  */
 message Session {
   string version = 1;                             // The version.
-  uint32 e2ee_pack_id = 2;                        // The e2ee pack ID.
+  uint32 e2ees_pack_id = 2;                        // The E2EE Security pack ID.
   string session_id = 3;                          // The session ID.
   E2eeAddress our_address = 4;                    // Our address.
   E2eeAddress their_address = 5;                  // Their address.

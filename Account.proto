@@ -1,24 +1,24 @@
 syntax = "proto3";
 
-package skissm;
+package e2ees;
 
-option java_package = "org.e2eelab.proto.skissm";
+option java_package = "org.e2eelab.proto.e2ees";
 option java_outer_classname = "AccountProto";
 option objc_class_prefix = "Objc";
 option swift_prefix="Swift";
 
-import "skissm/Certificate.proto";
-import "skissm/E2eeAddress.proto";
-import "skissm/IdentityKey.proto";
-import "skissm/OneTimePreKey.proto";
-import "skissm/SignedPreKey.proto";
+import "e2ees/Certificate.proto";
+import "e2ees/E2eeAddress.proto";
+import "e2ees/IdentityKey.proto";
+import "e2ees/OneTimePreKey.proto";
+import "e2ees/SignedPreKey.proto";
 
 /**
  * Account for keeping keys and registeration information.
  */
 message Account {
   string version = 1;                                 // The version used for this account.
-  uint32 e2ee_pack_id = 2;                            // The e2ee pack ID used for this account.
+  uint32 e2ees_pack_id = 2;                            // The e2ee pack ID used for this account.
   E2eeAddress address = 3;                            // The address with device ID for this account.
   Certificate server_cert = 4;                        // The certificate of the server that create this account.
 

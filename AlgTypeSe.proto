@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package e2ees;
+
+option java_package = "org.e2eelab.proto.e2ees";
+option java_outer_classname = "AlgTypeSeProto";
+option objc_class_prefix = "Objc";
+option swift_prefix="Swift";
+
+/**
+ * Algorithm type for Symmetric encryption.
+ */
+enum AlgTypeSe {
+  ALG_TYPE_SE_AES256GCM = 0;
+}

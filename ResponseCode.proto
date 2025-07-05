@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package skissm;
+package e2ees;
 
-option java_package = "org.e2eelab.proto.skissm";
+option java_package = "org.e2eelab.proto.e2ees";
 option java_outer_classname = "ResponseCodeProto";
 option objc_class_prefix = "Objc";
 option swift_prefix="Swift";
@@ -16,6 +16,7 @@ option swift_prefix="Swift";
  *      Successful responses    200–299
  *      Client error responses  400–499
  *      Server error responses  500–599
+ *      Custom responses        1000–1007
  */
 enum ResponseCode {
   RESPONSE_CODE_UNSPECIFIED = 0;                // Unknown response.
@@ -32,4 +33,13 @@ enum ResponseCode {
   RESPONSE_CODE_EXPECTATION_FAILED = 417;       // The server cannot meet the requirements of the expected request data.
   RESPONSE_CODE_INTERNAL_SERVER_ERROR = 500;    // The server has encountered a situation it does not know how to handle.
   RESPONSE_CODE_SERVICE_UNAVAILABLE = 503;      // The server is down for maintenance or overloaded.
+
+  RESPONSE_CODE_CUSTOM_1000 = 1000;             // A custom response code supports the flexibility of diverse server implementations.
+  RESPONSE_CODE_CUSTOM_1001 = 1001;             // A custom response code supports the flexibility of diverse server implementations.
+  RESPONSE_CODE_CUSTOM_1002 = 1002;             // A custom response code supports the flexibility of diverse server implementations.
+  RESPONSE_CODE_CUSTOM_1003 = 1003;             // A custom response code supports the flexibility of diverse server implementations.
+  RESPONSE_CODE_CUSTOM_1004 = 1004;             // A custom response code supports the flexibility of diverse server implementations.
+  RESPONSE_CODE_CUSTOM_1005 = 1005;             // A custom response code supports the flexibility of diverse server implementations.
+  RESPONSE_CODE_CUSTOM_1006 = 1006;             // A custom response code supports the flexibility of diverse server implementations.
+  RESPONSE_CODE_CUSTOM_1007 = 1007;             // A custom response code supports the flexibility of diverse server implementations.
 }

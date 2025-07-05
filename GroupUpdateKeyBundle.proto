@@ -1,22 +1,22 @@
 syntax = "proto3";
 
-package skissm;
+package e2ees;
 
-option java_package = "org.e2eelab.proto.skissm";
+option java_package = "org.e2eelab.proto.e2ees";
 option java_outer_classname = "GroupUpdateKeyBundleProto";
 option objc_class_prefix = "Objc";
 option swift_prefix="Swift";
 
-import "skissm/E2eeAddress.proto";
-import "skissm/GroupInfo.proto";
-import "skissm/GroupMemberInfo.proto";
+import "e2ees/E2eeAddress.proto";
+import "e2ees/GroupInfo.proto";
+import "e2ees/GroupMemberInfo.proto";
 
 /**
  * Bundle for group update key.
  */
 message GroupUpdateKeyBundle {
   string version = 1;                 // The version.
-  uint32 e2ee_pack_id = 2;            // The e2ee pack ID.
+  uint32 e2ees_pack_id = 2;            // The E2EE Security pack ID.
   E2eeAddress sender = 3;             // The sender's address.
   bool adding = 4;                    // The flag for identifying this bundle is used for adding or not.
   string session_id = 5;              // The session ID.

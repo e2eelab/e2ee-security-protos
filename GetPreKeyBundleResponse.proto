@@ -1,14 +1,14 @@
 syntax = "proto3";
 
-package skissm;
+package e2ees;
 
-option java_package = "org.e2eelab.proto.skissm";
+option java_package = "org.e2eelab.proto.e2ees";
 option java_outer_classname = "GetPreKeyBundleResponseProto";
 option objc_class_prefix = "Objc";
 option swift_prefix="Swift";
 
-import "skissm/PreKeyBundle.proto";
-import "skissm/ResponseCode.proto";
+import "e2ees/PreKeyBundle.proto";
+import "e2ees/ResponseCode.proto";
 
 /**
  * Response for getting pre-key bundle.

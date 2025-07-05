@@ -1,13 +1,13 @@
 syntax = "proto3";
 
-package skissm;
+package e2ees;
 
-option java_package = "org.e2eelab.proto.skissm";
+option java_package = "org.e2eelab.proto.e2ees";
 option java_outer_classname = "UpdateUserRequestProto";
 option objc_class_prefix = "Objc";
 option swift_prefix="Swift";
 
-import "skissm/UpdateUserMsg.proto";
+import "e2ees/UpdateUserMsg.proto";
 
 /**
  * Request for updating user.

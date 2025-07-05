@@ -1,34 +1,34 @@
 syntax = "proto3";
 
-package skissm;
+package e2ees;
 
-option java_package = "org.e2eelab.proto.skissm";
+option java_package = "org.e2eelab.proto.e2ees";
 option java_outer_classname = "ProtoMsgProto";
 option objc_class_prefix = "Objc";
 option swift_prefix="Swift";
 
-import "skissm/AcceptMsg.proto";
-import "skissm/AddGroupMemberDeviceMsg.proto";
-import "skissm/AddGroupMembersMsg.proto";
-import "skissm/AddUserDeviceMsg.proto";
-import "skissm/AcquireSyncMsg.proto";
-import "skissm/ClientHeartbeatMsg.proto";
-import "skissm/CreateGroupMsg.proto";
-import "skissm/E2eeAddress.proto";
-import "skissm/E2eeMsg.proto";
-import "skissm/FriendManagerMsg.proto";
-import "skissm/GroupManagerMsg.proto";
-import "skissm/InviteMsg.proto";
-import "skissm/LeaveGroupMsg.proto";
-import "skissm/ProtoMsgTag.proto";
-import "skissm/RemoveGroupMembersMsg.proto";
-import "skissm/RemoveUserDeviceMsg.proto";
-import "skissm/UpdateUserMsg.proto";
-import "skissm/SupplyOpksMsg.proto";
-import "skissm/ServerHeartbeatMsg.proto";
-import "skissm/ServerSignedSignature.proto";
-import "skissm/SystemManagerMsg.proto";
-import "skissm/UpgradeE2eePackMsg.proto";
+import "e2ees/AcceptMsg.proto";
+import "e2ees/AddGroupMemberDeviceMsg.proto";
+import "e2ees/AddGroupMembersMsg.proto";
+import "e2ees/AddUserDeviceMsg.proto";
+import "e2ees/AcquireSyncMsg.proto";
+import "e2ees/ClientHeartbeatMsg.proto";
+import "e2ees/CreateGroupMsg.proto";
+import "e2ees/E2eeAddress.proto";
+import "e2ees/E2eeMsg.proto";
+import "e2ees/FriendManagerMsg.proto";
+import "e2ees/GroupManagerMsg.proto";
+import "e2ees/InviteMsg.proto";
+import "e2ees/LeaveGroupMsg.proto";
+import "e2ees/ProtoMsgTag.proto";
+import "e2ees/RemoveGroupMembersMsg.proto";
+import "e2ees/RemoveUserDeviceMsg.proto";
+import "e2ees/UpdateUserMsg.proto";
+import "e2ees/SupplyOpksMsg.proto";
+import "e2ees/ServerHeartbeatMsg.proto";
+import "e2ees/ServerSignedSignature.proto";
+import "e2ees/SystemManagerMsg.proto";
+import "e2ees/UpgradeE2eePackMsg.proto";
 
 /**
  * The proto msg from server.

@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package e2ees;
+
+option java_package = "org.e2eelab.proto.e2ees";
+option java_outer_classname = "AlgTypeKemProto";
+option objc_class_prefix = "Objc";
+option swift_prefix="Swift";
+
+/**
+ * Algorithm type for Kem.
+ */
+enum AlgTypeKem {
+  ALG_TYPE_KEM_CURVE25519 = 0;
+
+  ALG_TYPE_KEM_HQC_128 = 1;
+  ALG_TYPE_KEM_HQC_192 = 9;
+  ALG_TYPE_KEM_HQC_256 = 17;
+
+  ALG_TYPE_KEM_MLKEM_512 = 33;
+  ALG_TYPE_KEM_MLKEM_768 = 41;
+  ALG_TYPE_KEM_MLKEM_1024 = 49;
+
+  ALG_TYPE_KEM_MCELIECE_348864 = 65;
+  ALG_TYPE_KEM_MCELIECE_348864F = 69;
+  ALG_TYPE_KEM_MCELIECE_460896 = 73;
+  ALG_TYPE_KEM_MCELIECE_460896F = 77;
+  ALG_TYPE_KEM_MCELIECE_6688128 = 81;
+  ALG_TYPE_KEM_MCELIECE_6688128F = 85;
+  ALG_TYPE_KEM_MCELIECE_6960119 = 89;
+  ALG_TYPE_KEM_MCELIECE_6960119F = 93;
+  ALG_TYPE_KEM_MCELIECE_8192128 = 97;
+  ALG_TYPE_KEM_MCELIECE_8192128F = 101;
+}

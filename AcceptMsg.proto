@@ -1,13 +1,13 @@
 syntax = "proto3";
 
-package skissm;
+package e2ees;
 
-option java_package = "org.e2eelab.proto.skissm";
+option java_package = "org.e2eelab.proto.e2ees";
 option java_outer_classname = "AcceptMsgProto";
 option objc_class_prefix = "Objc";
 option swift_prefix="Swift";
 
-import "skissm/E2eeAddress.proto";
+import "e2ees/E2eeAddress.proto";
 
 /**
  * Msg form invitee for completing a key agreement.
@@ -15,7 +15,7 @@ import "skissm/E2eeAddress.proto";
 message AcceptMsg {
   E2eeAddress from = 1;               // The sender's address.
   E2eeAddress to = 2;                 // The receiver's address.
-  uint32 e2ee_pack_id = 3;            // The e2ee pack ID.
+  uint32 e2ees_pack_id = 3;           // The E2EE Security pack ID.
   bytes encaps_ciphertext = 4;        // The ciphertext encapsulated by the inviter's identity public key, empty in ECC.
   bytes ratchet_key = 5;              // The invitee's ratchet key.
 }

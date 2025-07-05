@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package e2ees;
+
+option java_package = "org.e2eelab.proto.e2ees";
+option java_outer_classname = "AlgTypeDsProto";
+option objc_class_prefix = "Objc";
+option swift_prefix="Swift";
+
+/**
+ * Algorithm type for Digital signature.
+ */
+enum AlgTypeDs {
+  ALG_TYPE_DS_CURVE25519 = 0;
+
+  ALG_TYPE_DS_MLDSA_44 = 1;
+  ALG_TYPE_DS_MLDSA_65 = 9;
+  ALG_TYPE_DS_MLDSA_87 = 17;
+
+  ALG_TYPE_DS_FALCON_512 = 33;
+  ALG_TYPE_DS_FALCON_1024 = 41;
+
+  ALG_TYPE_DS_SPHINCS_SHA2_128F = 65;
+  ALG_TYPE_DS_SPHINCS_SHA2_128S = 69;
+  ALG_TYPE_DS_SPHINCS_SHA2_192F = 73;
+  ALG_TYPE_DS_SPHINCS_SHA2_192S = 77;
+  ALG_TYPE_DS_SPHINCS_SHA2_256F = 81;
+  ALG_TYPE_DS_SPHINCS_SHA2_256S = 85;
+  ALG_TYPE_DS_SPHINCS_SHAKE_128F = 89;
+  ALG_TYPE_DS_SPHINCS_SHAKE_128S = 93;
+  ALG_TYPE_DS_SPHINCS_SHAKE_192F = 97;
+  ALG_TYPE_DS_SPHINCS_SHAKE_192S = 101;
+  ALG_TYPE_DS_SPHINCS_SHAKE_256F = 105;
+  ALG_TYPE_DS_SPHINCS_SHAKE_256S = 109;
+}
