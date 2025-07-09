@@ -28,7 +28,7 @@ import "e2ees/SupplyOpksMsg.proto";
 import "e2ees/ServerHeartbeatMsg.proto";
 import "e2ees/ServerSignedSignature.proto";
 import "e2ees/SystemManagerMsg.proto";
-import "e2ees/UpgradeE2eePackMsg.proto";
+import "e2ees/UpgradeE2eesPackMsg.proto";
 
 /**
  * The proto msg from server.
@@ -63,7 +63,7 @@ message ProtoMsg {
       ClientHeartbeatMsg client_heartbeat_msg = 101;              // The client heart beat msg.
       ServerHeartbeatMsg server_heartbeat_msg = 102;              // The server heart beat msg.
 
-      UpgradeE2eePackMsg upgrade_e2ee_pack_msg = 901;             // The upgrade e2ee pack msg.
+      UpgradeE2eesPackMsg upgrade_e2ees_pack_msg = 901;           // The upgrade e2ees pack msg.
   };
 
   repeated ServerSignedSignature signature_list = 1001;           // The list of signatures created by signing the fingerprint of tag||from||to||payload with each server's key.
