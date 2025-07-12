@@ -13,7 +13,7 @@ import "e2ees/AlgTypeSe.proto";
 import "e2ees/AlgTypeHash.proto";
 
 /**
- * Msg for e2ee pack ID.
+ * Msg for e2ees pack ID.
  */
 message E2eesPackId {
   int32 ver = 1;               // The version.
