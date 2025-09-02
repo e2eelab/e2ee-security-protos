@@ -15,7 +15,8 @@ import "e2ees/E2eeAddress.proto";
 message AcceptMsg {
   E2eeAddress from = 1;               // The sender's address.
   E2eeAddress to = 2;                 // The receiver's address.
-  uint32 e2ees_pack_id = 3;           // The E2EE Security pack ID.
-  bytes encaps_ciphertext = 4;        // The ciphertext encapsulated by the inviter's identity public key, empty in ECC.
-  bytes ratchet_key = 5;              // The invitee's ratchet key.
+  string session_id = 3;              // The session ID.
+  uint32 e2ees_pack_id = 4;           // The E2EE Security pack ID.
+  bytes encaps_ciphertext = 5;        // The ciphertext encapsulated by the inviter's identity public key, empty in ECC.
+  bytes ratchet_key = 6;              // The invitee's ratchet key.
 }
