@@ -1,18 +1,17 @@
 syntax = "proto3";
 
 package e2ees;
- 
+
 option java_package = "org.e2eelab.proto.e2ees";
 option java_outer_classname = "RemoveUserDeviceMsgProto";
 option objc_class_prefix = "Objc";
 option swift_prefix="Swift";
- 
+
 import "e2ees/E2eeAddress.proto";
- 
+
 /**
  * Msg for removing user device.
  */
 message RemoveUserDeviceMsg {
   E2eeAddress user_address = 1;                   // The removed user e2ee address.
 }
- 

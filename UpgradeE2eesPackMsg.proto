@@ -1,12 +1,12 @@
 syntax = "proto3";
 
 package e2ees;
- 
+
 option java_package = "org.e2eelab.proto.e2ees";
 option java_outer_classname = "UpgradeE2eesPackMsgProto";
 option objc_class_prefix = "Objc";
 option swift_prefix="Swift";
- 
+
 /**
  * Message for upgrading e2ees pack.
  */

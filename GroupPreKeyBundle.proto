@@ -16,10 +16,11 @@ import "e2ees/GroupInfo.proto";
 message GroupPreKeyBundle {
   string version = 1;             // The version.
   uint32 e2ees_pack_id = 2;        // The E2EE Security pack ID.
-  E2eeAddress sender = 3;         // The sender's address.
-  string session_id = 4;          // The session ID.
-  string old_session_id = 5;      // The optional old session ID.
-  GroupInfo group_info = 6;       // The group information.
-  uint32 sequence = 7;            // The sequence of the related group session.
-  bytes group_seed = 8;           // The seed for the related group session.
+  string session_id = 3;          // The session ID.
+  string old_session_id = 4;      // The optional old session ID.
+  E2eeAddress sender = 5;         // The sender's address.
+
+  GroupInfo group_info = 11;       // The group information.
+  uint32 sequence = 12;            // The sequence of the related group session.
+  bytes group_seed = 13;           // The seed for the related group session.
 }

@@ -16,9 +16,9 @@ import "e2ees/AlgTypeHash.proto";
  * Msg for e2ees pack ID.
  */
 message E2eesPackId {
-  int32 ver = 1;               // The version.
+  int32 ver = 1;               // The e2ees pack ID version.
   AlgTypeDs ds = 2;            // The digital signature algorithm type.
   AlgTypeKem kem = 3;          // The kem algorithm type.
-  AlgTypeSe se = 4;        // The symmetric encryption algorithm type.
+  AlgTypeSe se = 4;            // The symmetric encryption algorithm type.
   AlgTypeHash hash = 5;        // The hash function algorithm type.
 }
