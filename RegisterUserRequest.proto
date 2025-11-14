@@ -8,6 +8,7 @@ option objc_class_prefix = "Objc";
 option swift_prefix="Swift";
 
 import "e2ees/IdentityKeyPublic.proto";
+import "e2ees/PlatformType.proto";
 import "e2ees/SignedPreKeyPublic.proto";
 import "e2ees/OneTimePreKeyPublic.proto";
 
@@ -21,6 +22,7 @@ message RegisterUserRequest {
   string device_id = 4;                                       // The ID of the user's device.
   string authenticator = 5;                                   // Authenticator is the email (mailto:xxx@xxx) that is bound to the registering user.
   string auth_code = 6;                                       // Auth code is a 6-digits number that is received by email or an invitation in this format (e2ee:invitorUserId@invitorDomain;invite=xxxxx).
+  PlatformType platform = 7;                                  // The platform type of the registering device.
 
   IdentityKeyPublic identity_key_public = 11;                 // The public part of the identity key pair.
   SignedPreKeyPublic signed_pre_key_public = 12;              // The public part of the signed pre-key pair.

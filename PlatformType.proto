@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package e2ees;
+
+option java_package = "org.e2eelab.proto.e2ees";
+option java_outer_classname = "PlatformTypeProto";
+option objc_class_prefix = "Objc";
+option swift_prefix="Swift";
+
+/**
+ * Enumeration of platform types for computing devices.
+ */
+enum PlatformType {
+  // 0x00
+  PLATFORM_TYPE_UNSPECIFIED = 0;
+
+  // 0x01 ~ 0x07
+  PLATFORM_TYPE_DESKTOP_LINUX = 1;              // Desktop platform: Linux
+  PLATFORM_TYPE_DESKTOP_MACOS = 2;              // Desktop platform: macOS
+  PLATFORM_TYPE_DESKTOP_WINDOWS = 3;            // Desktop platform: Windows
+
+  // 0x08 ~ 0x0f
+  PLATFORM_TYPE_MOBILE_IPHOME = 8;              // Mobile platform: iPhone
+  PLATFORM_TYPE_MOBILE_ANDROID = 9;             // Mobile platform: Android
+
+  // 0x10 ~ 0x17
+  PLATFORM_TYPE_TABLET_IPAD = 16;                // Tablet platform: iPad
+  PLATFORM_TYPE_TABLET_ANDROID_PAD = 17;         // Tablet platform: Android pad
+
+  // 0x18 ~ 0x1f
+  PLATFORM_TYPE_WEARABLE_SMARTWATCH_IWATCH = 24;          // Smartwatch platform: watchOS
+  PLATFORM_TYPE_WEARABLE_SMARTWATCH_ANDROID_WATCH = 25;   // Smartwatch platform: wearOS
+
+  // 0x20 ~ 0x27
+  // PLATFORM_TYPE_WEARABLE_FITNESSBAND_
+
+  // 0x28 ~ 0x2f
+  // PLATFORM_TYPE_WEARABLE_SMARTGLASSES_
+
+  // 0x30 ~ 0x37
+  // PLATFORM_TYPE_WEARABLE_HEARABLES_
+
+  // 0x38 ~ 0x3f  reserved
+  // 0x40 ~ 0x47
+  // PLATFORM_TYPE_TV_
+
+  // 0x48 ~ 0x4f
+  // PLATFORM_TYPE_AUTOMOTIVE_
+
+  // 0x50 ~ 0x5f
+  PLATFORM_TYPE_WEB = 80;                        // Web platform
+
+  // 0x60 ~ 0x7f
+  PLATFORM_TYPE_SERVER_LINUX = 96;               // Server platform: Linux
+  PLATFORM_TYPE_SERVER_WINDOWS = 97;             // Server platform: Windows
+  PLATFORM_TYPE_SERVER_UNIX = 98;                // Server platform: Unix / Free BSD
+  PLATFORM_TYPE_SERVER_CLOUD_NATIVE = 99;        // Server platform: Cloud native including
+                                                 //   Container Orchestration,
+                                                 //   Serverless Functions,
+                                                 //   Service Mesh,,
+                                                 //   Serverless Containers,,
+                                                 //   Edge Cloud-Native,,
+                                                 //   Platform-as-a-Service(PaaS)
+  // 0x80 ~ 0x9f
+  // PLATFORM_TYPE_EMBEDED_
+}
