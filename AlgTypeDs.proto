@@ -8,7 +8,7 @@ option objc_class_prefix = "Objc";
 option swift_prefix="Swift";
 
 /**
- * Algorithm type for Digital signature.
+ * Algorithm type for digital signature.
  */
 enum AlgTypeDs {
   ALG_TYPE_DS_CURVE25519 = 0;

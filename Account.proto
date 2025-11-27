@@ -11,7 +11,6 @@ import "e2ees/Certificate.proto";
 import "e2ees/E2eeAddress.proto";
 import "e2ees/IdentityKey.proto";
 import "e2ees/OneTimePreKey.proto";
-import "e2ees/PlatformType.proto";
 import "e2ees/SignedPreKey.proto";
 
 /**
@@ -22,7 +21,6 @@ message Account {
   uint32 e2ees_pack_id = 2;                           // The e2ee pack ID used for this account.
   E2eeAddress address = 3;                            // The address with device ID for this account.
   Certificate server_cert = 4;                        // The certificate of the server that create this account.
-  PlatformType platform = 5;                          // The platform hosting this account.
 
   IdentityKey identity_key = 11;                      // The identity key pair.
   SignedPreKey signed_pre_key = 12;                   // The signed pre-key pair.
