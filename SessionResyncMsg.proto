@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package e2ees;
+
+option java_package = "org.e2eelab.proto.e2ees";
+option java_outer_classname = "SessionResyncMsgProto";
+option objc_class_prefix = "Objc";
+option swift_prefix="Swift";
+
+/**
+ * Msg for session resync.
+ */
+message SessionResyncMsg {
+  string session_id = 1;
+  string target_device_id = 2;
+}

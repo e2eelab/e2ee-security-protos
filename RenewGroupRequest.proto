@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package e2ees;
+
+option java_package = "org.e2eelab.proto.e2ees";
+option java_outer_classname = "RenewGroupRequestProto";
+option objc_class_prefix = "Objc";
+option swift_prefix="Swift";
+
+import "e2ees/RenewGroupMsg.proto";
+
+/**
+ * Request for renewing a group.
+ */
+message RenewGroupRequest {
+  RenewGroupMsg msg = 1;             // The included msg for this request.
+}

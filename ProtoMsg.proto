@@ -23,10 +23,12 @@ import "e2ees/LeaveGroupMsg.proto";
 import "e2ees/ProtoMsgTag.proto";
 import "e2ees/RemoveGroupMembersMsg.proto";
 import "e2ees/RemoveUserDeviceMsg.proto";
+import "e2ees/RenewGroupMsg.proto";
 import "e2ees/UpdateUserMsg.proto";
 import "e2ees/SupplyOpksMsg.proto";
 import "e2ees/ServerHeartbeatMsg.proto";
 import "e2ees/ServerSignedSignature.proto";
+import "e2ees/SessionResyncMsg.proto";
 import "e2ees/SystemManagerMsg.proto";
 import "e2ees/UpgradeE2eesPackMsg.proto";
 
@@ -46,11 +48,14 @@ message ProtoMsg {
       AddUserDeviceMsg add_user_device_msg = 24;          // The add user device msg.
       RemoveUserDeviceMsg remove_user_device_msg = 25;    // The remove user device msg.
 
+      SessionResyncMsg session_resync_msg = 31;
+
       CreateGroupMsg create_group_msg = 41;                       // The create group msg..
       AddGroupMembersMsg add_group_members_msg = 42;              // The add group members msg.
       RemoveGroupMembersMsg remove_group_members_msg = 43;        // The remove group members msg.
       AddGroupMemberDeviceMsg add_group_member_device_msg = 44;   // The add group member device msg.
       LeaveGroupMsg leave_group_msg = 45;                         // The leave group msg.
+      RenewGroupMsg renew_group_msg = 46;                         // The renew group msg.
 
       E2eeMsg e2ee_msg = 51;                                      // The end to end encryption msg.
 

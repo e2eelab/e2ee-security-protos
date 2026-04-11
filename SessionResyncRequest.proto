@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package e2ees;
+
+option java_package = "org.e2eelab.proto.e2ees";
+option java_outer_classname = "SessionResyncRequestProto";
+option objc_class_prefix = "Objc";
+option swift_prefix="Swift";
+
+import "e2ees/SessionResyncMsg.proto";
+
+/**
+ * Request for session resync.
+ */
+message SessionResyncRequest {
+  SessionResyncMsg msg = 1;
+}

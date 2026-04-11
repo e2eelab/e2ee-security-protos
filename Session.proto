@@ -35,4 +35,5 @@ message Session {
   bool responded = 32;                            // The invitee has responded or not.
   int64 invite_t = 33;                            // The server time of invitation for creating this session.
   bool short_term = 34;                           // The flag indicates that session is used for short term.
+  bool is_active = 35;
 }
