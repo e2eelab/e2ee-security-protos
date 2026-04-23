@@ -26,4 +26,5 @@ message GroupUpdateKeyBundle {
   bytes chain_key = 14;               // The chain key.
   bytes sign_public_key = 15;         // The signed public key part of the user's uploaded public identity key.
   repeated GroupMemberInfo adding_member_info_list = 16;  // The list of adding group member information.
+  bytes group_seed = 17;                                  // The group random seed.
 }
