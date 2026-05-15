@@ -7,6 +7,7 @@ option java_outer_classname = "RemoveUserDeviceRequestProto";
 option objc_class_prefix = "Objc";
 option swift_prefix="Swift";
 
+import "e2ees/E2eeAddress.proto";
 import "e2ees/RemoveUserDeviceMsg.proto";
 
 /**
