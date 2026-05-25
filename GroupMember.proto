@@ -42,4 +42,12 @@ message GroupMember {
   GroupRole role = 3;                     // The group member's role.
 
   WelcomeState welcome_state = 11;        // Welcome-bundle delivery state.
+
+  // How many times the server has re-dispatched the welcome bundle
+  // for this member via ResendWelcomeBundle. Server increments on
+  // each successful re-enqueue; transitions welcome_state to
+  // FAILED_PERMANENT and stops re-delivering once the count
+  // exceeds the server-side cap (default 10).
+  // Resilience-layer Gate 3 — bounded retry. See whitepaper §4.6.
+  int32 welcome_attempt_count = 12;
 }
