@@ -19,10 +19,27 @@ enum GroupRole {
 }
 
 /**
+ * Welcome-bundle delivery state per group member.
+ *
+ * Default value for legacy GroupMember rows is
+ * `WELCOME_STATE_PENDING` (proto-3 default = 0). A one-time backfill
+ * mongosh query marks every legacy row as
+ * `WELCOME_STATE_ACKED` because by definition those welcomes
+ * succeeded (the group is functioning).
+ */
+enum WelcomeState {
+  WELCOME_STATE_PENDING = 0;          // Initial; fan-out hasn't been ACK'd by member.
+  WELCOME_STATE_ACKED = 1;            // Member confirmed receipt; safe to skip on retry.
+  WELCOME_STATE_FAILED_PERMANENT = 2; // Member rotated keys — admin re-invite needed.
+}
+
+/**
  * The group member.
  */
 message GroupMember {
   string user_id = 1;                     // The group member's users ID.
   string domain = 2;                      // The group member's domain.
   GroupRole role = 3;                     // The group member's role.
+
+  WelcomeState welcome_state = 11;        // Welcome-bundle delivery state.
 }
