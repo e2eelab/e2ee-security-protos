@@ -19,5 +19,5 @@ message CreateGroupResponse {
   string msg = 2;                                     // The message given by the server.
 
   E2eeAddress group_address = 3;                      // The group address.
-  repeated GroupMemberInfo member_info_list = 4;      // The group members' information.
+  repeated GroupMemberInfo member_info_list = 4;      // The information about the group members.
 }

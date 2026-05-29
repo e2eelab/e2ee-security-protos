@@ -14,6 +14,6 @@ option swift_prefix="Swift";
  */
 message OneTimePreKey {
   uint32 opk_id = 1;          // The one-time pre-key ID.
-  bool used = 2;              // This one-time pre-key is used or not.
+  bool used = 2;              // Whether this one-time pre-key has been used.
   KeyPair key_pair = 3;       // The one-time pre-key data.
 }

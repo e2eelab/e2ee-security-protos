@@ -10,10 +10,10 @@ option swift_prefix="Swift";
 import "e2ees/E2eeAddress.proto";
 
 /**
- * Msg for sypplying one-time pre-keys.
+ * Msg for supplying one-time pre-keys.
  */
 message SupplyOpksMsg {
-  int64 server_t = 1;
-  uint32 opks_num = 2;                // The number of one-time pre-keys needed to be upload.
+  int64 server_t = 1;                 // The server timestamp of the msg.
+  uint32 opks_num = 2;                // The number of one-time pre-keys that need to be uploaded.
   E2eeAddress user_address = 3;       // The user's address.
 }

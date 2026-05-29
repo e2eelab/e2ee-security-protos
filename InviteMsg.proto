@@ -7,22 +7,34 @@ option java_outer_classname = "InviteMsgProto";
 option objc_class_prefix = "Objc";
 option swift_prefix="Swift";
 
+import "e2ees/AlgTypeKem.proto";
 import "e2ees/E2eeAddress.proto";
 
 /**
- * Msg form inviter for initiating a key agreement.
+ * Pre-shared input used to generate an extra shared secret during key agreement.
+ */
+message PreSharedInput {
+  string name = 1;            // The name of the corresponding extra pre-key.
+  AlgTypeKem alg_type = 2;    // The kem algorithm type used to generate the shared secret.
+  bytes input = 3;            // The input data used to derive the shared secret.
+}
+
+/**
+ * Msg from the inviter for initiating a key agreement.
  */
 message InviteMsg {
-  string version = 1;                         // The version.
-  uint32 e2ees_pack_id = 2;                   // The E2EE Security pack ID.
+  string version = 1;                         // The protocol version.
+  uint32 e2ees_pack_id = 2;                   // The e2ees pack ID.
   string session_id = 3;                      // The session ID.
   E2eeAddress from = 4;                       // The sender's address.
   E2eeAddress to = 5;                         // The receiver's address.
 
   bytes alice_identity_key = 11;              // The inviter's identity key.
-  bytes alice_base_key = 12;                  // The inviter's base key that is the first ratchet public key.
-  repeated bytes pre_shared_input_list = 13;  // The data that needs to generate some shared secret.
+  bytes alice_base_key = 12;                  // The inviter's base key, which is the first ratchet public key.
+  repeated bytes pre_shared_input_list = 13;  // The input data used to derive the shared secrets.
   uint32 bob_signed_pre_key_id = 14;          // The invitee's signed pre-key ID.
   uint32 bob_one_time_pre_key_id = 15;        // The invitee's one-time pre-key ID.
-  int64 invite_t = 16;                        // The server time of invitation for creating this session.
+  int64 invite_t = 16;                        // The server time when the invitation creating this session was issued.
+
+  repeated PreSharedInput pre_shared_input_extra_list = 21;  // The optional list of extra shared secrets.
 }

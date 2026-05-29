@@ -12,20 +12,20 @@ import "e2ees/GroupInfo.proto";
 import "e2ees/GroupMemberInfo.proto";
 
 /**
- * Bundle for group update key.
+ * The key-update bundle for a group session.
  */
 message GroupUpdateKeyBundle {
-  string version = 1;                 // The version.
-  uint32 e2ees_pack_id = 2;           // The E2EE Security pack ID.
+  string version = 1;                 // The protocol version.
+  uint32 e2ees_pack_id = 2;           // The e2ees pack ID.
   string session_id = 3;              // The session ID.
   E2eeAddress sender = 4;             // The sender's address.
 
-  bool adding = 11;                   // The flag for identifying this bundle is used for adding or not.
-  GroupInfo group_info = 12;          // Thi group information.
+  bool adding = 11;                   // Whether this bundle is for adding members.
+  GroupInfo group_info = 12;          // The group information.
   uint32 sequence = 13;               // The sequence of the chain key.
   bytes chain_key = 14;               // The chain key.
   bytes sign_public_key = 15;         // The signed public key part of the user's uploaded public identity key.
-  repeated GroupMemberInfo adding_member_info_list = 16;  // The list of adding group member information.
+  repeated GroupMemberInfo adding_member_info_list = 16;  // The list of information for members being added.
   bytes group_seed = 17;                                  // The group random seed.
-  repeated GroupMemberInfo all_member_info_list = 18;     // Sign public keys of ALL members of the group (including the sender and existing members)
+  repeated GroupMemberInfo all_member_info_list = 18;     // The sign public keys of all group members, including the sender and existing members.
 }

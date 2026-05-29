@@ -8,10 +8,10 @@ option objc_class_prefix = "Objc";
 option swift_prefix="Swift";
 
 /**
- * Payload for group msg.
+ * The payload for a group msg.
  */
 message GroupMsgPayload {
   uint32 sequence = 1;        // The sequence of the related group session.
   bytes ciphertext = 2;       // The ciphertext.
-  bytes signature = 3;        // The signature signed by the sender.
+  bytes signature = 3;        // The signature produced by the sender.
 }

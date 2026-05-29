@@ -15,6 +15,6 @@ import "e2ees/E2eeMsg.proto";
  */
 message SendGroupMsgRequest {
   E2eeMsg msg = 1;                            // The included msg for this request.
-  repeated E2eeAddress allow_list = 2;        // Optional allow list.
-  repeated E2eeAddress deny_list = 3;         // Optional deny list.
+  repeated E2eeAddress allow_list = 2;        // The optional allow list.
+  repeated E2eeAddress deny_list = 3;         // The optional deny list.
 }

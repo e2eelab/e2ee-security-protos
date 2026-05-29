@@ -15,6 +15,6 @@ import "e2ees/KeyPair.proto";
 message SignedPreKey {
   uint32 spk_id = 1;          // The signed pre-key ID.
   KeyPair key_pair = 2;       // The signed pre-key pair.
-  bytes signature = 3;        // The signature of key_pair's public_key signed by the user's identity key.
-  int64 ttl = 4;              // The time stamp indicates that the signed pre-key will be removed.
+  bytes signature = 3;        // The signature of key_pair's public_key, signed by the user's identity key.
+  int64 ttl = 4;              // The timestamp at which the signed pre-key will be removed.
 }

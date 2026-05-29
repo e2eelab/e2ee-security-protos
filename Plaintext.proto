@@ -7,9 +7,9 @@ option java_outer_classname = "PlaintextProto";
 option objc_class_prefix = "Objc";
 option swift_prefix="Swift";
 
-import "e2ees/UserDevicesBundle.proto";
 import "e2ees/GroupPreKeyBundle.proto";
 import "e2ees/GroupUpdateKeyBundle.proto";
+import "e2ees/UserDevicesBundle.proto";
 
 /**
  * The plaintext.
@@ -17,11 +17,11 @@ import "e2ees/GroupUpdateKeyBundle.proto";
 message Plaintext {
   string version = 1;                 // The version.
   oneof payload {
-      bytes common_msg = 2;           // The common msg payload that is used for general purpose from application.
-      bytes common_sync_msg = 3;      // The sync msg payload that is forwarded to other devices of the user.
+    bytes common_msg = 2;           // The common msg payload used for general purposes by the application.
+    bytes common_sync_msg = 3;      // The sync msg payload forwarded to the user's other devices.
 
-      UserDevicesBundle user_devices_bundle = 11;         // The user devices' bundle that is used to help sync session with other devices of the user.
-      GroupPreKeyBundle group_pre_key_bundle = 12;        // The group pre-key bundle that is used to help create group session.
-      GroupUpdateKeyBundle group_update_key_bundle = 13;  // The group update key bundle that is used to help renew group session.
+    UserDevicesBundle user_devices_bundle = 11;         // The user devices' bundle used to help sync the session with the user's other devices.
+    GroupPreKeyBundle group_pre_key_bundle = 12;        // The group pre-key bundle used to help create a group session.
+    GroupUpdateKeyBundle group_update_key_bundle = 13;  // The group update key bundle used to help renew a group session.
   };
 }

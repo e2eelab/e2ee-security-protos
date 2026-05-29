@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package e2ees;
+
+option java_package = "org.e2eelab.proto.e2ees";
+option java_outer_classname = "ExtraPreKeyPublicProto";
+option objc_class_prefix = "Objc";
+option swift_prefix="Swift";
+
+import "e2ees/AlgTypeKem.proto";
+
+/**
+ * The public part of an extra pre-key.
+ */
+message ExtraPreKeyPublic {
+  string name = 1;            // The name of this extra pre-key.
+  AlgTypeKem alg_type = 2;    // The kem algorithm type of this extra pre-key.
+  bytes public_key = 3;       // The public part of this extra pre-key pair.
+}

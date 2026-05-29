@@ -10,8 +10,8 @@ option swift_prefix="Swift";
 import "e2ees/AddGroupMemberDeviceMsg.proto";
 
 /**
- * Request for adding a device of group member.
+ * Request for adding a device of a group member.
  */
 message AddGroupMemberDeviceRequest {
-  AddGroupMemberDeviceMsg msg = 1;        // The included msg for this request.
+  AddGroupMemberDeviceMsg msg = 1;        // The msg carried by this request.
 }

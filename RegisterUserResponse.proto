@@ -23,11 +23,11 @@ message RegisterUserResponse {
   string username = 4;                                        // The user's name.
   string password = 5;                                        // The password.
   string auth = 6;                                            // The authorization token.
-  int64 expires_in = 7;                                       // The expiry time of authorization token.
-  string authenticator = 8;                                   // The optional authenticator that is bound to this userId.
-  Certificate server_cert = 9;                                // The certificate of the server that support the registration.
+  int64 expires_in = 7;                                       // The expiry time of the authorization token.
+  string authenticator = 8;                                   // The optional authenticator bound to this user ID.
+  Certificate server_cert = 9;                                // The certificate of the server that supports the registration.
 
-  repeated E2eeAddress other_device_address_list = 11;        // The addresses of other devices that is created with this userId.
-  repeated E2eeAddress other_user_address_list = 12;          // The addresses of other users who had built session with this userId.
-  repeated GroupInfo group_info_list = 13;                    // The information of groups that had been created or joined by this userId.
+  repeated E2eeAddress other_device_address_list = 11;        // The addresses of other devices created under this user ID.
+  repeated E2eeAddress other_user_address_list = 12;          // The addresses of other users who have built a session with this user ID.
+  repeated GroupInfo group_info_list = 13;                    // The information of groups created or joined by this user ID.
 }

@@ -10,7 +10,7 @@ option swift_prefix="Swift";
 import "e2ees/E2eeMsg.proto";
 
 /**
- * Request for sending an one2one msg.
+ * Request for sending a one2one msg.
  */
 message SendOne2oneMsgRequest {
   E2eeMsg msg = 1;            // The included msg for this request.

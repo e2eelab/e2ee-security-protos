@@ -15,8 +15,8 @@ import "e2ees/MsgKey.proto";
  * The group session.
  */
 message GroupSession {
-  string version = 1;                 // The version.
-  uint32 e2ees_pack_id = 2;            // The E2EE Security pack ID.
+  string version = 1;                 // The protocol version.
+  uint32 e2ees_pack_id = 2;            // The e2ees pack ID.
   string session_id = 3;              // The group session ID.
   E2eeAddress sender = 4;             // The sender's address.
   E2eeAddress session_owner = 5;      // The group session owner's address.

@@ -8,10 +8,10 @@ option objc_class_prefix = "Objc";
 option swift_prefix="Swift";
 
 import "e2ees/AcceptMsg.proto";
+import "e2ees/AcquireSyncMsg.proto";
 import "e2ees/AddGroupMemberDeviceMsg.proto";
 import "e2ees/AddGroupMembersMsg.proto";
 import "e2ees/AddUserDeviceMsg.proto";
-import "e2ees/AcquireSyncMsg.proto";
 import "e2ees/ClientHeartbeatMsg.proto";
 import "e2ees/CreateGroupMsg.proto";
 import "e2ees/E2eeAddress.proto";
@@ -23,48 +23,48 @@ import "e2ees/LeaveGroupMsg.proto";
 import "e2ees/ProtoMsgTag.proto";
 import "e2ees/RemoveGroupMembersMsg.proto";
 import "e2ees/RemoveUserDeviceMsg.proto";
-import "e2ees/UpdateUserMsg.proto";
-import "e2ees/SupplyOpksMsg.proto";
 import "e2ees/ServerHeartbeatMsg.proto";
 import "e2ees/ServerSignedSignature.proto";
+import "e2ees/SupplyOpksMsg.proto";
 import "e2ees/SystemManagerMsg.proto";
+import "e2ees/UpdateUserMsg.proto";
 import "e2ees/UpgradeE2eesPackMsg.proto";
 
 /**
- * The proto msg from server.
+ * Msg sent from the server.
  */
 message ProtoMsg {
-  ProtoMsgTag tag = 1;                // The tag for helping server consume this msg.
+  ProtoMsgTag tag = 1;                // The tag that helps the server consume this msg.
   E2eeAddress from = 2;               // The sender's address.
   E2eeAddress to = 3;                 // The receiver's address.
   oneof payload {
-      AcquireSyncMsg acquire_sync_msg = 11;               // The acquire sync msg.
+    AcquireSyncMsg acquire_sync_msg = 11;               // The acquire sync msg.
 
-      SupplyOpksMsg supply_opks_msg = 21;                 // The supply one-time pre-key msg.
-      InviteMsg invite_msg = 22;                          // The invite msg.
-      AcceptMsg accept_msg = 23;                          // The accept msg.
-      AddUserDeviceMsg add_user_device_msg = 24;          // The add user device msg.
-      RemoveUserDeviceMsg remove_user_device_msg = 25;    // The remove user device msg.
+    SupplyOpksMsg supply_opks_msg = 21;                 // The supply opks msg.
+    InviteMsg invite_msg = 22;                          // The invite msg.
+    AcceptMsg accept_msg = 23;                          // The accept msg.
+    AddUserDeviceMsg add_user_device_msg = 24;          // The add user device msg.
+    RemoveUserDeviceMsg remove_user_device_msg = 25;    // The remove user device msg.
 
-      CreateGroupMsg create_group_msg = 41;                       // The create group msg..
-      AddGroupMembersMsg add_group_members_msg = 42;              // The add group members msg.
-      RemoveGroupMembersMsg remove_group_members_msg = 43;        // The remove group members msg.
-      AddGroupMemberDeviceMsg add_group_member_device_msg = 44;   // The add group member device msg.
-      LeaveGroupMsg leave_group_msg = 45;                         // The leave group msg.
+    CreateGroupMsg create_group_msg = 41;                       // The create group msg.
+    AddGroupMembersMsg add_group_members_msg = 42;              // The add group members msg.
+    RemoveGroupMembersMsg remove_group_members_msg = 43;        // The remove group members msg.
+    AddGroupMemberDeviceMsg add_group_member_device_msg = 44;   // The add group member device msg.
+    LeaveGroupMsg leave_group_msg = 45;                         // The leave group msg.
 
-      E2eeMsg e2ee_msg = 51;                                      // The end to end encryption msg.
+    E2eeMsg e2ee_msg = 51;                                      // The e2ee msg.
 
-      UpdateUserMsg update_user_msg = 61;                         // The update user msg.
+    UpdateUserMsg update_user_msg = 61;                         // The update user msg.
 
-      FriendManagerMsg friend_manager_msg = 91;                   // The friend manager msg.
-      GroupManagerMsg group_manager_msg = 92;                     // The group manager msg.
-      SystemManagerMsg system_manager_msg = 93;                   // The system manager msg.
+    FriendManagerMsg friend_manager_msg = 91;                   // The friend manager msg.
+    GroupManagerMsg group_manager_msg = 92;                     // The group manager msg.
+    SystemManagerMsg system_manager_msg = 93;                   // The system manager msg.
 
-      ClientHeartbeatMsg client_heartbeat_msg = 101;              // The client heart beat msg.
-      ServerHeartbeatMsg server_heartbeat_msg = 102;              // The server heart beat msg.
+    ClientHeartbeatMsg client_heartbeat_msg = 101;              // The client heartbeat msg.
+    ServerHeartbeatMsg server_heartbeat_msg = 102;              // The server heartbeat msg.
 
-      UpgradeE2eesPackMsg upgrade_e2ees_pack_msg = 901;           // The upgrade e2ees pack msg.
+    UpgradeE2eesPackMsg upgrade_e2ees_pack_msg = 901;           // The upgrade e2ees pack msg.
   };
 
-  repeated ServerSignedSignature signature_list = 1001;           // The list of signatures created by signing the fingerprint of tag||from||to||payload with each server's key.
+  repeated ServerSignedSignature signature_list = 1001;           // The list of signatures, each created by signing the fingerprint of tag||from||to||payload with a server's key.
 }

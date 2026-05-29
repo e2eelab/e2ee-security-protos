@@ -8,9 +8,9 @@ option objc_class_prefix = "Objc";
 option swift_prefix="Swift";
 
 /**
- * Message for upgrading e2ees pack.
+ * Msg for upgrading the e2ees pack.
  */
 message UpgradeE2eesPackMsg {
-  int64 upgrade_ts = 1;                   // The server timestamp for upgrading e2ee pack.
+  int64 upgrade_ts = 1;                   // The server timestamp for upgrading the e2ees pack.
   uint32 e2ees_pack_id = 2;                // The new e2ees pack ID.
 }

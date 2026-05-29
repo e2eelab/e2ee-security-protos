@@ -11,13 +11,13 @@ import "e2ees/E2eeAddress.proto";
 import "e2ees/GroupInfo.proto";
 
 /**
- * Bundle for group pre-key.
+ * The pre-key bundle for a group session.
  */
 message GroupPreKeyBundle {
-  string version = 1;             // The version.
-  uint32 e2ees_pack_id = 2;        // The E2EE Security pack ID.
+  string version = 1;             // The protocol version.
+  uint32 e2ees_pack_id = 2;        // The e2ees pack ID.
   string session_id = 3;          // The session ID.
-  string old_session_id = 4;      // The optional old session ID.
+  string old_session_id = 4;      // The optional previous session ID.
   E2eeAddress sender = 5;         // The sender's address.
 
   GroupInfo group_info = 11;       // The group information.

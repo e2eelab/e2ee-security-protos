@@ -28,20 +28,20 @@ enum GroupRole {
  * succeeded (the group is functioning).
  */
 enum WelcomeState {
-  WELCOME_STATE_PENDING = 0;          // Initial; fan-out hasn't been ACK'd by member.
-  WELCOME_STATE_ACKED = 1;            // Member confirmed receipt; safe to skip on retry.
-  WELCOME_STATE_FAILED_PERMANENT = 2; // Member rotated keys — admin re-invite needed.
+  WELCOME_STATE_PENDING = 0;          // Initial state; fan-out has not yet been ACK'd by the member.
+  WELCOME_STATE_ACKED = 1;            // The member confirmed receipt; safe to skip on retry.
+  WELCOME_STATE_FAILED_PERMANENT = 2; // The member rotated keys; an admin re-invite is needed.
 }
 
 /**
  * The group member.
  */
 message GroupMember {
-  string user_id = 1;                     // The group member's users ID.
+  string user_id = 1;                     // The group member's user ID.
   string domain = 2;                      // The group member's domain.
   GroupRole role = 3;                     // The group member's role.
 
-  WelcomeState welcome_state = 11;        // Welcome-bundle delivery state.
+  WelcomeState welcome_state = 11;        // The welcome-bundle delivery state for this member.
 
   // How many times the server has re-dispatched the welcome bundle
   // for this member via ResendWelcomeBundle. Server increments on

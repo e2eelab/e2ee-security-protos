@@ -9,18 +9,18 @@ option swift_prefix="Swift";
 
 import "e2ees/E2eeAddress.proto";
 import "e2ees/GroupInfo.proto";
-import "e2ees/GroupMemberInfo.proto";
 import "e2ees/GroupMember.proto";
+import "e2ees/GroupMemberInfo.proto";
 
 /**
  * Msg for adding group members.
  */
 message AddGroupMembersMsg {
-  uint32 e2ees_pack_id = 1;                                    // The E2EE Security pack ID.
-  E2eeAddress sender_address = 2;                             // The sender's address.
-  uint32 sequence = 3;                                        // The sequence for related group session.
-  GroupInfo group_info = 4;                                   // The group information, including the group name, the group address and all of the group members.
-  repeated GroupMember adding_member_list = 5;                // The adding group members.
-  repeated GroupMemberInfo adding_member_info_list = 6;       // The adding group members' information.
-  repeated GroupMemberInfo full_member_info_list = 7;         // The full list of group members' information.
+  uint32 e2ees_pack_id = 1;                                  // The e2ees pack ID.
+  E2eeAddress sender_address = 2;                            // The sender's address.
+  uint32 sequence = 3;                                       // The sequence number of the related group session.
+  GroupInfo group_info = 4;                                  // The group information, including the group name, the group address and all the group members.
+  repeated GroupMember adding_member_list = 5;               // The group members being added.
+  repeated GroupMemberInfo adding_member_info_list = 6;      // The information about the group members being added.
+  repeated GroupMemberInfo full_member_info_list = 7;        // The information about the full set of group members.
 }

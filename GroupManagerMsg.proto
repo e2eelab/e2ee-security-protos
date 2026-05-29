@@ -29,82 +29,84 @@ enum GroupOp {
  * Argument for creating a group.
  */
 message CreateGroupArg {
-  E2eeAddress creator_address = 1;
-  repeated GroupMember group_member_list = 2;
+  E2eeAddress creator_address = 1;              // The address of the group creator.
+  repeated GroupMember group_member_list = 2;   // The list of initial group members.
 }
 
 /**
  * Argument for updating the group name.
  */
 message UpdateGroupNameArg {
-  E2eeAddress user_address = 1;
-  string group_name = 2;
+  E2eeAddress user_address = 1;   // The address of the user updating the group name.
+  string group_name = 2;          // The new group name.
 }
 
 /**
  * Argument for updating the group avatar.
  */
 message UpdateGroupAvatarArg {
-  E2eeAddress user_address = 1;
-  string groupAvatarUrl = 2;
+  E2eeAddress user_address = 1;   // The address of the user updating the group avatar.
+  // protolint:disable:next FIELD_NAMES_LOWER_SNAKE_CASE
+  string groupAvatarUrl = 2;      // The URL of the new group avatar.
 }
 
 /**
  * Argument for updating the group admins.
  */
 message UpdateGroupAdminsArg {
-  E2eeAddress user_address = 1;
-  repeated GroupMember group_admin_list = 2;
+  E2eeAddress user_address = 1;                // The address of the user updating the group admins.
+  repeated GroupMember group_admin_list = 2;   // The new list of group admins.
 }
 
 /**
  * Argument for adding group members.
  */
 message AddGroupMembersArg {
-  E2eeAddress user_address = 1;
-  repeated GroupMember added_member_list = 2;
+  E2eeAddress user_address = 1;                 // The address of the user adding the members.
+  repeated GroupMember added_member_list = 2;   // The list of members being added to the group.
 }
 
 /**
  * Argument for joining a group.
  */
 message JoinGroupArg {
-  E2eeAddress user_address = 1;
-  GroupMember joined_member = 2;
+  E2eeAddress user_address = 1;   // The address of the user joining the group.
+  GroupMember joined_member = 2;  // The member joining the group.
 }
 
 /**
  * Argument for removing group members.
  */
 message RemoveGroupMembersArg {
-  E2eeAddress user_address = 1;
-  repeated GroupMember removed_member_list = 2;
+  E2eeAddress user_address = 1;                   // The address of the user removing the members.
+  repeated GroupMember removed_member_list = 2;   // The list of members being removed from the group.
 }
 
 /**
  * Argument for destroying a group.
  */
 message DestroyGroupArg {
-  E2eeAddress user_address = 1;
+  E2eeAddress user_address = 1;   // The address of the user destroying the group.
 }
 
 /**
- * Msg for group manager.
+ * Msg for managing a group.
  */
 message GroupManagerMsg {
-  int64 modified_date = 1;            // The modified date of the group manager msg.
+  int64 modified_date = 1;            // The server time when the msg was last modified.
+  // protolint:disable:next FIELD_NAMES_LOWER_SNAKE_CASE
   string msgId = 2;                   // The msg ID.
-  E2eeAddress group_address = 3;      // The group address.
-  string group_name = 4;              // The group name.
-  GroupOp op = 5;                     // The operation of this msg.
+  E2eeAddress group_address = 3;      // The group's address.
+  string group_name = 4;              // The group's name.
+  GroupOp op = 5;                     // The group operation carried by this msg.
   oneof arg {
-      CreateGroupArg create_group_arg = 11;                   // The argument for creating group.
-      UpdateGroupNameArg update_group_name_arg = 12;          // The argument for updating group name.
-      UpdateGroupAvatarArg update_group_avatar_arg = 13;      // The argument for updating group avatar.
-      UpdateGroupAdminsArg update_group_admins_arg = 14;      // The argument for updating group admins.
-      AddGroupMembersArg add_group_members_arg = 21;          // The argument for adding group members.
-      JoinGroupArg join_group_arg = 22;                       // The argument for joining group.
-      RemoveGroupMembersArg remove_group_members_arg = 23;    // The argument for removing group members.
-      DestroyGroupArg destroy_group_arg = 30;                 // The argument for destroying group.
+    CreateGroupArg create_group_arg = 11;                   // The argument for creating a group.
+    UpdateGroupNameArg update_group_name_arg = 12;          // The argument for updating the group name.
+    UpdateGroupAvatarArg update_group_avatar_arg = 13;      // The argument for updating the group avatar.
+    UpdateGroupAdminsArg update_group_admins_arg = 14;      // The argument for updating the group admins.
+    AddGroupMembersArg add_group_members_arg = 21;          // The argument for adding group members.
+    JoinGroupArg join_group_arg = 22;                       // The argument for joining the group.
+    RemoveGroupMembersArg remove_group_members_arg = 23;    // The argument for removing group members.
+    DestroyGroupArg destroy_group_arg = 30;                 // The argument for destroying the group.
   }
 }

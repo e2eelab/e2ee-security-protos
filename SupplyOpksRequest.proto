@@ -11,10 +11,10 @@ import "e2ees/E2eeAddress.proto";
 import "e2ees/OneTimePreKeyPublic.proto";
 
 /**
- * Request for sypplying one-time pre-keys.
+ * Request for supplying one-time pre-keys.
  */
 message SupplyOpksRequest {
-  uint32 e2ees_pack_id = 1;                                        // The E2EE Security pack ID.
+  uint32 e2ees_pack_id = 1;                                        // The e2ees pack ID.
   E2eeAddress user_address = 2;                                   // The user's address.
-  repeated OneTimePreKeyPublic one_time_pre_key_public_list = 3;  // The public part of one-time pre-key pairs.
+  repeated OneTimePreKeyPublic one_time_pre_key_public_list = 3;  // The public parts of the one-time pre-key pairs.
 }

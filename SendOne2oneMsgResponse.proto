@@ -10,7 +10,7 @@ option swift_prefix="Swift";
 import "e2ees/ResponseCode.proto";
 
 /**
- * Response for sending an one2one msg.
+ * Response for sending a one2one msg.
  */
 message SendOne2oneMsgResponse {
   ResponseCode code = 1;          // The response code given by the server.

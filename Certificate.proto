@@ -11,17 +11,17 @@ import "e2ees/AlgTypeDs.proto";
 import "e2ees/AlgTypeHash.proto";
 
 /**
- * A subject is used to describe issuer or issuee.
+ * A subject describing a certificate issuer or issuee.
  */
 message Subject {
   string cn = 1;              // The common name.
   string domain = 2;          // The domain name.
-  string o = 3;               // The organization name
-  repeated string ou = 4;     // The organization unit name.
+  string o = 3;               // The organization name.
+  repeated string ou = 4;     // The organizational unit names.
 }
 
 /**
- * A cert data with public key is provided by an issuee and can be signed by an issuer.
+ * The cert data, carrying the public key, that is provided by an issuee and signed by an issuer.
  */
 message Cert {
   Subject issuee = 11;              // The owner of this certificate.
@@ -29,25 +29,25 @@ message Cert {
   bytes public_key = 13;            // The public key data.
 
   Subject issuer = 2;               // The signer of this certificate.
-  int64 not_before = 4;             // The certificate issue date.
-  int64 not_after = 5;              // The certificate expiry date.
+  int64 not_before = 4;             // The time when the certificate becomes valid.
+  int64 not_after = 5;              // The time when the certificate expires.
 }
 
 /**
  * The certificate message.
  */
 message Certificate {
-  uint32 version = 1;                             // The version number
-  AlgTypeHash hash_alg = 2;                       // The hash algorithm for creating fingerprint of cert attribute and signing public key.
-  AlgTypeDs signing_alg = 3;                      // The algorithm for generating the signature.
+  uint32 version = 1;                             // The version number.
+  AlgTypeHash hash_alg = 2;                       // The hash algorithm used to fingerprint the cert data and the signing public key.
+  AlgTypeDs signing_alg = 3;                      // The algorithm used to generate the signature.
 
-  Cert cert = 11;                                 // The cert data that is provided by issuee.
+  Cert cert = 11;                                 // The cert data provided by the issuee.
 
-  bytes cert_fingerprint = 21;                    // The hash value as the fingerprint of cert attribute.
-  bytes signing_public_key_fingerprint = 22;      // The hash value as the fingerprint of the signing public key.
+  bytes cert_fingerprint = 21;                    // The hash value serving as the fingerprint of the cert data.
+  bytes signing_public_key_fingerprint = 22;      // The hash value serving as the fingerprint of the signing public key.
 
-  bytes signature = 31;                           // The signature that is signed by signing private key that is owned by issuer.
+  bytes signature = 31;                           // The signature produced with the signing private key owned by the issuer.
 
-  int64 ts = 41;                                  // The lastest update time stamp for this certificate.
-  bool valid = 42;                                // The validity of this certificate.
+  int64 ts = 41;                                  // The time of the latest update to this certificate.
+  bool valid = 42;                                // Whether this certificate is valid.
 }

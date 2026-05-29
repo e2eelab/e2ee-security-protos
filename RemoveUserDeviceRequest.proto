@@ -14,6 +14,6 @@ import "e2ees/RemoveUserDeviceMsg.proto";
  * Request for removing user device.
  */
 message RemoveUserDeviceRequest {
-  E2eeAddress sender_address = 1;   // The sender address.
+  E2eeAddress sender_address = 1;   // The sender's address.
   RemoveUserDeviceMsg msg = 2;      // The included msg for this request.
 }

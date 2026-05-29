@@ -10,8 +10,8 @@ option swift_prefix="Swift";
 import "e2ees/ProtoMsgTag.proto";
 
 /**
- * Msg for acquiring un-processed msgs form server.
+ * Msg for acquiring unprocessed msgs from the server.
  */
 message AcquireSyncMsg {
-  ProtoMsgTag last_proto_msg_tag = 1;      // The last handled tag for acquiring un-handled msg from server.
+  ProtoMsgTag last_proto_msg_tag = 1;      // The last handled tag, used to fetch unhandled msgs from the server.
 }

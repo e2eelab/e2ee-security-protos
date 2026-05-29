@@ -8,7 +8,7 @@ option objc_class_prefix = "Objc";
 option swift_prefix="Swift";
 
 /**
- * The public part of an one-time pre-key.
+ * The public part of a one-time pre-key.
  */
 message OneTimePreKeyPublic {
   uint32 opk_id = 1;          // The one-time pre-key ID.

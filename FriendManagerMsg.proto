@@ -24,26 +24,27 @@ enum FriendOp {
 }
 
 /**
- * The data object representing a friend.
+ * The data object describing a friendship.
  */
 message FriendshipDTO {
-  int64 modified_date = 1;
-  string from_user = 2;
-  string to_user = 3;
-  string nickname = 4;
-  string memoname = 5;
-  int32 block_state = 6;
-  int32 friend_status = 7;
+  int64 modified_date = 1;   // The server time when the friendship was last modified.
+  string from_user = 2;      // The address of the user who initiated the friendship.
+  string to_user = 3;        // The address of the target user of the friendship.
+  string nickname = 4;       // The friend's nickname.
+  string memoname = 5;       // The memo name set for the friend.
+  int32 block_state = 6;     // The block state of the friendship.
+  int32 friend_status = 7;   // The status of the friendship.
 }
 
 /**
- * Msg for friend manager.
+ * Msg for managing a friendship.
  */
 message FriendManagerMsg {
-  int64 modified_date = 1;            // The modified date of the friend manager msg.
+  int64 modified_date = 1;            // The server time when the msg was last modified.
+  // protolint:disable:next FIELD_NAMES_LOWER_SNAKE_CASE
   string msgId = 2;                   // The msg ID.
-  E2eeAddress user_address = 3;       // The user address.
-  string user_name = 4;               // The user name.
-  FriendOp op = 5;                    // The operation of this msg.
-  FriendshipDTO friend = 6;           // The friend data.
+  E2eeAddress user_address = 3;       // The user's address.
+  string user_name = 4;               // The user's name.
+  FriendOp op = 5;                    // The friend operation carried by this msg.
+  FriendshipDTO friend = 6;           // The friendship data.
 }

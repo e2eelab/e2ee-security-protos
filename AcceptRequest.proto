@@ -13,5 +13,5 @@ import "e2ees/AcceptMsg.proto";
  * Request for sending an accept msg.
  */
 message AcceptRequest {
-  AcceptMsg msg = 1;          // The included msg for this request.
+  AcceptMsg msg = 1;          // The msg carried by this request.
 }

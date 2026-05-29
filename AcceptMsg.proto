@@ -10,14 +10,14 @@ option swift_prefix="Swift";
 import "e2ees/E2eeAddress.proto";
 
 /**
- * Msg form invitee for completing a key agreement.
+ * Msg from invitee for completing a key agreement.
  */
 message AcceptMsg {
-  uint32 e2ees_pack_id = 1;           // The E2EE Security pack ID.
+  uint32 e2ees_pack_id = 1;           // The e2ees pack ID.
   string session_id = 2;              // The session ID.
   E2eeAddress from = 3;               // The sender's address.
   E2eeAddress to = 4;                 // The receiver's address.
 
-  bytes encaps_ciphertext = 11;        // The ciphertext encapsulated by the inviter's identity public key, empty in ECC.
-  bytes ratchet_key = 12;              // The invitee's ratchet key.
+  bytes encaps_ciphertext = 11;       // The ciphertext encapsulated to the inviter's identity public key, empty for ECC.
+  bytes ratchet_key = 12;             // The invitee's ratchet key.
 }

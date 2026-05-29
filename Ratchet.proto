@@ -7,8 +7,8 @@ option java_outer_classname = "RatchetProto";
 option objc_class_prefix = "Objc";
 option swift_prefix="Swift";
 
-import "e2ees/SenderChainNode.proto";
 import "e2ees/ReceiverChainNode.proto";
+import "e2ees/SenderChainNode.proto";
 import "e2ees/SkippedMsgKeyNode.proto";
 
 /**
@@ -20,6 +20,6 @@ message Ratchet {
   uint32 sending_message_sequence = 3;                    // The sequence of the sending message.
   uint32 received_message_sequence = 4;                   // The sequence of the received message.
   SenderChainNode sender_chain = 5;                       // The sender chain.
-  ReceiverChainNode receiver_chain = 6;                   // The receiver chains.
+  ReceiverChainNode receiver_chain = 6;                   // The receiver chain.
   repeated SkippedMsgKeyNode skipped_msg_key_list = 7;    // The skipped message keys.
 }

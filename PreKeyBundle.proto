@@ -8,6 +8,7 @@ option objc_class_prefix = "Objc";
 option swift_prefix="Swift";
 
 import "e2ees/E2eeAddress.proto";
+import "e2ees/ExtraPreKeyPublic.proto";
 import "e2ees/IdentityKeyPublic.proto";
 import "e2ees/OneTimePreKeyPublic.proto";
 import "e2ees/ServerSignedSignature.proto";
@@ -17,12 +18,13 @@ import "e2ees/SignedPreKeyPublic.proto";
  * Bundle for pre-key.
  */
 message PreKeyBundle {
-  uint32 e2ees_pack_id = 1;                               // The E2EE Security pack ID.
+  uint32 e2ees_pack_id = 1;                               // The e2ees pack ID.
   E2eeAddress user_address = 2;                           // The user's address.
 
   IdentityKeyPublic identity_key_public = 11;             // The public part of the identity key pair.
   SignedPreKeyPublic signed_pre_key_public = 12;          // The public part of the signed pre-key pair.
   OneTimePreKeyPublic one_time_pre_key_public = 13;       // The public part of the one-time pre-key pair.
+  repeated ExtraPreKeyPublic extra_pre_key_list = 14;     // The public parts of all the user's optional extra pre-keys.
 
-  ServerSignedSignature signature = 21;                   // The signature of pre-key bundle signed by the server's key.
+  ServerSignedSignature signature = 21;                   // The signature of the pre-key bundle, signed by the server's key.
 }
