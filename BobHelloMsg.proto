@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package e2ees;
+
+option java_package = "org.e2eelab.proto.e2ees";
+option java_outer_classname = "BobHellogMsgProto";
+option objc_class_prefix = "Objc";
+option swift_prefix="Swift";
+
+import "e2ees/E2eeAddress.proto";
+
+enum HandShakeStatus {
+  HAND_SHAKE_STATUS_UNSPECIFIED = 0;
+  HAND_SHAKE_STATUS_ACCEPTED = 1;
+  HAND_SHAKE_STATUS_REJECTED = 2;
+  HAND_SHAKE_STATUS_CIPHER_SUITE_MISMATCH = 3;
+  HAND_SHAKE_STATUS_UNSUPPORTED_PROTOCOL_VER = 4;
+  HAND_SHAKE_STATUS_AGREEMENT_FAILED = 5;
+  HAND_SHAKE_STATUS_PEER_IDENTITY_UNVERIFIED = 6;
+}
+
+/**
+ * Msg from invitee for accepting or denying the key agreement.
+ */
+message BobHelloMsg {
+  uint32 e2ees_pack_id = 1;           // The e2ees pack ID.
+  E2eeAddress from = 2;               // The sender's address.
+  E2eeAddress to = 3;                 // The receiver's address.
+
+  HandShakeStatus status = 11;        // The status of the handshake.
+}

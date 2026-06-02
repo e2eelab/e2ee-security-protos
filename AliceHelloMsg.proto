@@ -3,7 +3,7 @@ syntax = "proto3";
 package e2ees;
 
 option java_package = "org.e2eelab.proto.e2ees";
-option java_outer_classname = "InviteMsgProto";
+option java_outer_classname = "AliceHelloMsgProto";
 option objc_class_prefix = "Objc";
 option swift_prefix="Swift";
 
@@ -11,9 +11,9 @@ import "e2ees/E2eeAddress.proto";
 import "e2ees/PreSharedInput.proto";
 
 /**
- * Msg from the inviter for initiating a key agreement.
+ * Msg from the inviter for initiating a rtt-1 key agreement.
  */
-message InviteMsg {
+message AliceHelloMsg {
   string version = 1;                         // The protocol version.
   uint32 e2ees_pack_id = 2;                   // The e2ees pack ID.
   string session_id = 3;                      // The session ID.

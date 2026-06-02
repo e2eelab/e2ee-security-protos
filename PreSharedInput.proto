@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package e2ees;
+
+option java_package = "org.e2eelab.proto.e2ees";
+option java_outer_classname = "PreSharedInputProto";
+option objc_class_prefix = "Objc";
+option swift_prefix="Swift";
+
+import "e2ees/AlgTypeKem.proto";
+
+/**
+ * Pre-shared input used to generate an extra shared secret during key agreement.
+ */
+message PreSharedInput {
+  string name = 1;            // The name of the corresponding extra pre-key.
+  AlgTypeKem alg_type = 2;    // The kem algorithm type used to generate the shared secret.
+  bytes input = 3;            // The input data used to derive the shared secret.
+}
