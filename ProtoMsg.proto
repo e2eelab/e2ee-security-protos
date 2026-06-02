@@ -12,6 +12,8 @@ import "e2ees/AcquireSyncMsg.proto";
 import "e2ees/AddGroupMemberDeviceMsg.proto";
 import "e2ees/AddGroupMembersMsg.proto";
 import "e2ees/AddUserDeviceMsg.proto";
+import "e2ees/AliceHelloMsg.proto";
+import "e2ees/BobHelloMsg.proto";
 import "e2ees/ClientHeartbeatMsg.proto";
 import "e2ees/CreateGroupMsg.proto";
 import "e2ees/E2eeAddress.proto";
@@ -45,6 +47,8 @@ message ProtoMsg {
     AcceptMsg accept_msg = 23;                          // The accept msg.
     AddUserDeviceMsg add_user_device_msg = 24;          // The add user device msg.
     RemoveUserDeviceMsg remove_user_device_msg = 25;    // The remove user device msg.
+    AliceHelloMsg alice_hello_msg = 26;                 // The alice hello msg.
+    BobHelloMsg bob_hello_msg = 27;                    // The bob hello msg.
 
     CreateGroupMsg create_group_msg = 41;                       // The create group msg.
     AddGroupMembersMsg add_group_members_msg = 42;              // The add group members msg.
