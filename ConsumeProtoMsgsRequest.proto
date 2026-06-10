@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package e2ees;
+
+option java_package = "org.e2eelab.proto.e2ees";
+option java_outer_classname = "ConsumeProtoMsgsRequestProto";
+option objc_class_prefix = "Objc";
+option swift_prefix = "Swift";
+
+// Request for batched-consume of multiple proto msgs received from
+// server. Companion to the single-id ConsumeProtoMsgRequest. The
+// historical per-message ACK pattern was overwhelming the server
+// (5K concurrent unary calls/sec under pw_009 fan-out storms); this
+// batched form lets the client coalesce ~50 ids into a single
+// round-trip, dropping ACK RPC rate by 50x.
+message ConsumeProtoMsgsRequest {
+  // The proto msg IDs to be consumed in this batch.
+  repeated string proto_msg_ids = 1;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package e2ees;
+
+option java_package = "org.e2eelab.proto.e2ees";
+option java_outer_classname = "ConsumeProtoMsgsResponseProto";
+option objc_class_prefix = "Objc";
+option swift_prefix = "Swift";
+
+// Response for ConsumeProtoMsgsRequest. Mirrors the single-id
+// ConsumeProtoMsgResponse shape: aggregate code + optional msg, no
+// per-id breakdown. Per-id failures inside the server's batched
+// remove are best-effort (mirrors single-id idempotent semantics).
+message ConsumeProtoMsgsResponse {
+  // The aggregate response code given by the server.
+  int32 code = 1;
+  // The message given by the server.
+  string msg = 2;
+}
